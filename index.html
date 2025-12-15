@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/base.css">
+    <title>Eigaku</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+
+            <div id="logo"><a href="index.html" target="_self">EIGAKU</a></div><!--логотип-->
+
+            <div id="nav-medium">
+                <ul id="not-burger"><!--три челикса-->
+                    <li><a href="index.html" target="_self">Главная</a></li>
+                    <li id="catalog">
+                        <a href="#">каталог</a>
+                        <div id="catalog-content">
+                            <a href="pages/catalog.html">кино</a>
+                            <a href="pages/catalog.html">музыка</a>
+                        </div>
+                    </li>
+                    <li><a href="pages/about-us.html" target="_self">о нас</a></li>
+                </ul>
+
+                <form action="/search" method="get" id="search"> <!--поиск-->
+                    <input type="search" name="search" placeholder="Поиск">
+                    <!-- <button type="submit">Найти</button> -->
+                </form>
+
+            </div>
+
+
+            <div class="menu"> <!--бургер менюха-->
+                <input type="checkbox" id="burger-checkbox" class="burger-checkbox"> <!--создаем чекбокс-->
+                <label for="burger-checkbox" class="burger"></label>
+
+                <ul class="menu-list">
+                    <li><a href="/pages/registration.html" class="menu-item">коллекции</a>
+                    <li>
+                    <li id="burger-catalog">
+                        <div id="burger-catalog-menu">
+                            <a href="/pages/catalog.html">кино</a>
+                            <a href="/pages/catalog.html">музыка</a>
+                        </div>
+                        <a href="#" class="menu-item">каталог</a>
+
+                    </li>
+                    <li><a href="pages/about-us.html" target="_self" class="menu-item">о нас</a></li>
+                    <li><a href="#" class="menu-item">Подписка</a>
+                    <li>
+                    <li><a href="#" class="menu-item">Настройки</a>
+                    <li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+
+    <div class="all">
+
+        <div class="carousel-container">
+            <h2>фильмы</h2>
+            <button class="carousel-btn prev">&#10094;</button>
+            <div class="carousel-track">
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/silencelambs.jpg"
+                            alt="The Silence of the Lambs молчание ягнят" class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/greenmile.webp"
+                            alt="green mile зеленая миля" class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/joker.jpeg" alt="joker джокер"
+                            class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/dune.jpg" alt="dune дюна"
+                            class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/interstellar.jpg"
+                            alt="interstellar Интерстеллар" class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/shawshank.webp"
+                            alt="The Shawshank Redemption Побег из Шоушенка" class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/deadpool.webp" alt="Deadpool дэдпул "
+                            class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/johnwick.jpg"
+                            alt="john wick джон вик" class="carousel-image"></a></div>
+            </div>
+            <button class="carousel-btn next">&#10095;</button>
+        </div>
+
+        <div class="carousel-container">
+            <h2>мультсериалы</h2>
+            <button class="carousel-btn prev">&#10094;</button>
+            <div class="carousel-track">
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/arcane.webp" alt="arcane аркейн"
+                            class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/gravityfalls.webp"
+                            alt="gravity falls гравити фолз" class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/avatar.webp"
+                            alt="Avatar: The Last Airbender Аватар: Легенда об Аанге" class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/spiderman.jpg"
+                            alt="Spider-Man: Into the Spider-Verse Человек-паук: Через вселенные"
+                            class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/at.webp"
+                            alt="Adventure Time Время приключений" class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/gumbl.webp"
+                            alt="The Amazing World of Gumball Удивительный мир Гамбола" class="carousel-image"></a>
+                </div>
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/star.webp"
+                            alt="Star vs. the Forces of Evil Звёздная принцесса и силы зла" class="carousel-image"></a>
+                </div>
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/owlhouse.webp"
+                            alt="owl house Дом совы" class="carousel-image"></a></div>
+            </div>
+            <button class="carousel-btn next">&#10095;</button>
+        </div>
+
+        <div class="carousel-container">
+            <h2>альбомы</h2>
+            <button class="carousel-btn prev">&#10094;</button>
+            <div class="carousel-track">
+                <div class="carousel-item"><a href="pages/music.html"><img src="img/nevermind.jpg"
+                            alt="nirvana nevermind" class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/music.html"><img src="img/hitme.jpg"
+                            alt="Billie Eilish Билли Айлиш hit me hard and soft" class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/music.html"><img src="img/parachutes.jfif"
+                            alt="coldplay parachutes" class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/music.html"><img src="img/lana-del-rey.jpg"
+                            alt="лана дель рей lana del rey born to die" class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/music.html"><img src="img/gir.jfif"
+                            alt="gir girl in red if i could make it go quiet " class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/music.html"><img src="img/monetochka.jpeg"
+                            alt="monetochka монеточка Молитвы. Анекдоты. Тосты." class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/music.html"><img src="img/kid-krow.jpg"
+                            alt="Конан Грей Conan Gray kid krow" class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/music.html"><img src="img/ado1.webp" alt="адо ado Kyougen"
+                            class="carousel-image"></a></div>
+            </div>
+            <button class="carousel-btn next">&#10095;</button>
+        </div>
+
+        <div class="carousel-container">
+            <h2>аниме</h2>
+            <button class="carousel-btn prev">&#10094;</button>
+            <div class="carousel-track">
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/castle.jpg"
+                            alt="Howl's Moving Castle Ходячий замок" class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/jujuka.webp"
+                            alt="jujutsu kaisen Магическая битва" class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/gacha.jpg" alt="gachiakuta гачиакута"
+                            class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/madoka.webp"
+                            alt="Mahou Shoujo Madoka Magica Девочка-волшебница Мадока Магика"
+                            class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/otaku.webp"
+                            alt="Wotakoi: Love Is Hard for Otaku Так сложно любить отаку" class="carousel-image"></a>
+                </div>
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/naruto.webp" alt="naruto наруто"
+                            class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/onepiece.webp" alt="one piece ванпис"
+                            class="carousel-image"></a></div>
+                <div class="carousel-item"><a href="pages/kino.html"><img src="img/dangeonmeshi.webp"
+                            alt="Dungeon Meshi Подземелье вкусностей" class="carousel-image"></a></div>
+            </div>
+            <button class="carousel-btn next">&#10095;</button>
+        </div>
+
+        <footer>
+            <div id="footer-items">
+                <span>&copy; 2025 <a href="index.html" target="_self">EIGAKU</a> </span>
+                <div id="icons">
+                    <span class="iconify" data-icon="bxl:telegram"></span>
+                    <span class="iconify" data-icon="bxl:whatsapp"></span>
+                    <span class="iconify" data-icon="bxl:gmail"></span>
+                </div>
+                <span><a href="pages/about-us.html" target="_self">о нас</a></span>
+            </div>
+        </footer>
+        <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+        <script src="js/carousel.js"></script>
+        <script src="js/search.js"></script>
+</body>
+
+</html>
