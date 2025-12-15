@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>music</title>
+    <link rel="stylesheet" href="../css/music.css">
+    <link rel="stylesheet" href="../css/base.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+
+            <div id="logo"><a href="../index.html" target="_self">Eigaku</a></div><!--логотип-->
+
+            <div id="nav-medium">
+                <ul id="not-burger"><!--три челикса-->
+                    <li><a href="../index.html" target="_self">Главная</a></li>
+                    <li id="catalog">
+                        <a href="#">каталог</a>
+                        <div id="catalog-content">
+                            <a href="#">кино</a>
+                            <a href="#">музыка</a>
+                        </div>
+                    </li>
+                    <li><a href="about-us.html" target="_self">о нас</a></li>
+                </ul>
+
+                <form action="/search" method="get"> <!--поиск-->
+                    <input type="search" name="search" placeholder="Поиск">
+                    <!-- <button type="submit">Найти</button> -->
+                </form>
+            </div>
+
+
+            <div class="menu"> <!--бургер менюха-->
+                <input type="checkbox" id="burger-checkbox" class="burger-checkbox"> <!--создаем чекбокс-->
+                <label for="burger-checkbox" class="burger"></label>
+                <ul class="menu-list">
+                    <li><a href="#" class="menu-item">Моя медиатека</a>
+                    <li>
+                    <li><a href="#" class="menu-item">Подписка</a>
+                    <li>
+                    <li><a href="#" class="menu-item">Настройки</a>
+                    <li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="all">
+        <div id="card-all">
+
+            <div id="pic">
+                <img src="../img/nevermind.jpg" alt="картинка музыкы" class="music-image">
+            </div>
+
+            <div id="text">
+                <h2>nevermind</h2>
+                Nevermind — второй и самый коммерчески успешный альбом американской гранж-группы Nirvana. Был выпущен
+                24 сентября 1991 года на лейбле DGC Records, продюсером записи выступил Бутч Виг. Создавая этот альбом,
+                Курт Кобейн стремился вывести музыку группы за пределы условностей звучания гранж-сцены Сиэтла,
+                ориентируясь на творчество таких альтернативных рок-коллективов, как Pixies и используя их технику
+                перемены динамики (тихо-громко). В записи пластинки участвовал новый ударник, Дэйв Грол, который пришёл
+                на смену предыдущему барабанщику группы — Чэду Ченнингу (тем не менее в альбоме осталась одна композиция
+                с его участием, «Polly»).
+            </div>
+        </div>
+
+        <div id="list">
+            <h3>Треклист:</h3>
+            <ul class="tracklist">
+                <ol>
+                    <li>Smells Like Teen Spirit</li>
+                    <li>In Bloom</li>
+                    <li>Come As You Are</li>
+                    <li>Breed</li>
+                    <li>Lithium</li>
+                    <li>Polly</li>
+                    <li>Territorial Pissings</li>
+                    <li>Drain You</li>
+                    <li>Lounge Act</li>
+                    <li>Stay Away</li>
+                    <li>On A Plain</li>
+                    <li>Something In The Way</li>
+                </ol>
+        </div>
+        <footer>
+            <div id="footer-items">
+                <span>&copy; 2025 <a href="index.html" target="_self">EIGAKU</a> </span>
+                <div id="icons">
+                    <span class="iconify" data-icon="bxl:telegram"></span>
+                    <span class="iconify" data-icon="bxl:whatsapp"></span>
+                    <span class="iconify" data-icon="bxl:gmail"></span>
+                </div>
+                <span><a href="pages/about-us.html" target="_self">о нас</a></span>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/registration.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <title>registration</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+
+            <div id="logo"><a href="index.html" target="_self">Eigaku</a></div><!--логотип-->
+
+            <div id="nav-medium">
+                <ul id="not-burger"><!--три челикса-->
+                    <li><a href="/index.html" target="_self">Главная</a></li>
+                    <li id="catalog">
+                        <a href="#">каталог</a>
+                        <div id="catalog-content">
+                            <a href="#">кино</a>
+                            <a href="#">музыка</a>
+                        </div>
+                    </li>
+                    <li><a href="about-us.html" target="_self">о нас</a></li>
+                </ul>
+
+                <form action="/search" method="get"> <!--поиск-->
+                    <input type="search" name="search" placeholder="Поиск">
+                    <!-- <button type="submit">Найти</button> -->
+                </form>
+
+
+            </div>
+
+
+            <div class="menu"> <!--бургер менюха-->
+                <input type="checkbox" id="burger-checkbox" class="burger-checkbox"> <!--создаем чекбокс-->
+                <label for="burger-checkbox" class="burger"></label>
+                <ul class="menu-list">
+                    <li><a href="/pages/registration.html" class="menu-item">Моя медиатека</a>
+                    <li>
+                    <li><a href="#" class="menu-item">Подписка</a>
+                    <li>
+                    <li><a href="#" class="menu-item">Настройки</a>
+                    <li>
+                </ul>
+            </div>
+
+
+        </nav>
+    </header>
+
+    <div class="all">
+        <div id="form">
+            <form id="registration" action="" method="post">
+                <h1>регистрация</h1>
+
+                <div class="name"> <!--ИМЯ-->
+                    <label for="name">имя:</label> <!-- текст перед полем-->
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="mail"> <!--ПОЧТА-->
+                    <label for="email">e-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="password"><!--ПАРОЛЬ-->
+                    <label for="password">пароль:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="confirm_password">
+                <label for="confirm_password">Повторите пароль:</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+                </div>
+
+                <div class="butt">
+                    <div class="sub">
+                        <input type="submit" value="продолжить">
+                    </div>
+                </div>
+                <p>уже есть аккаунт? <a href="/pages/autorisation.html">войти</a></p>
+                
+            </form>
+        </div>
+
+    </div>
+<script>
+document.querySelector('input[type="submit"]').onclick = function(e) {
+  e.preventDefault();
+  alert('✅ Регистрация выполнена успешно!');
+  
+  // Очищаем ближайшую форму
+  if (this.form) {
+    this.form.reset();
+  }
+};
+</script>
+</body>
+
+</html>
