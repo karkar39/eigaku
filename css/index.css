@@ -1,0 +1,169 @@
+.carousel-container {
+    /*базовый контейнер слайдера*/
+    position: relative;
+    width: 100%;
+    width: auto;
+    overflow: hidden;
+    margin-top: 100px;
+    background-color: #121416;
+
+    h2 {
+        margin: 0 0 10px 5px;
+        color: #DE3D82;
+        font-weight: lighter;
+        font-size: 25px;
+        z-index: 100;
+    }
+}
+
+.carousel-track {
+    /*двигающаяся часть*/
+    display: flex;
+    transition: transform 0.3s ease;
+    /*плавная анимация листания*/
+    gap: 10px;
+    padding: 0 0 30px 10px;
+    /* padding-r: 10px; */
+    /* background-color: #15383D; */
+    width: max-content;
+    /*ширина определяется содержимым*/
+}
+
+.carousel-item {
+    /*блок фильма*/
+    flex: 0 0 auto;
+    max-height: 350px;
+    width: 250px;
+    border-radius: 15px !important;
+    overflow: hidden;
+}
+
+.carousel-item:hover {
+    box-shadow: 0 -10px 20px -5px #17929D,
+        /* верхняя тень */
+        0 10px 20px -5px #17929D;
+    /* нижняя тень */
+}
+
+.carousel-item img {
+    object-fit: cover;
+    /*заполняет но обрезает*/
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.carousel-item img:hover {
+    transform: scale(1.02);
+}
+
+.carousel-btn {
+    /*ко всем кнопкам*/
+    position: absolute;
+    top: 50%;
+    transform: translateY(-51%);
+    color: #F3FEFF;
+    border: none;
+    width: auto;
+    height: 100%;
+    cursor: pointer;
+    font-size: 40px;
+    z-index: 2;
+}
+
+.carousel-btn.prev {
+    /*прошлое*/
+    left: 0px;
+    background: linear-gradient(90deg, #121416 0%, rgba(53, 53, 53, 0) 100%);
+}
+
+.carousel-btn.next {
+    /*след*/
+    right: 0px;
+    background: linear-gradient(270deg, #121416 0%, rgba(53, 53, 53, 0) 100%);
+}
+
+.carousel-btn:disabled {
+    /*нельзя листать*/
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+
+
+@media (max-width: 1024px) {
+
+    .carousel-container {
+        /* базовый контейнер слайдера */
+        margin-top: 100px;
+
+        h2 {
+            font-size: 23px;
+        }
+    }
+
+    .carousel-track {
+        /*двигающаяся часть*/
+        gap: 10px;
+        padding: 0 0 30px 10px;
+    }
+
+    .carousel-item {
+        /*блок фильма*/
+        max-height: 330px;
+        width: 230px;
+        border-radius: 15px;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    .carousel-container {
+        margin-top: 90px;
+
+        h2 {
+            margin: 0 0 7px 5px;
+            font-size: 20px;
+        }
+    }
+
+    .carousel-track {
+        /*двигающаяся часть*/
+        gap: 8px;
+        padding: 0 0 30px 8px;
+    }
+
+    .carousel-item {
+        /*блок фильма*/
+        max-height: 300px;
+        width: 200px;
+        border-radius: 13px;
+    }
+
+}
+
+@media (max-width: 320px) {
+
+    .carousel-container {
+        margin-top: 80px;
+
+        h2 {
+            margin: 0 0 7px 5px;
+            font-size: 19px;
+        }
+    }
+
+    .carousel-track {
+        /*двигающаяся часть*/
+        gap: 6px;
+        padding: 0 0 30px 6px;
+    }
+
+    .carousel-item {
+        /*блок фильма*/
+        max-height: 250px;
+        width: 150px;
+    }
+
+}

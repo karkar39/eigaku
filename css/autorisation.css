@@ -1,0 +1,215 @@
+#form {
+    margin: 0 auto;
+    width: 380px;
+    border: 4px solid #15383D;
+    border-radius: 5px;
+    padding: 15px;
+    letter-spacing: 1px;
+}
+
+#autorisation {
+
+    h1 {
+        font-size: 35px;
+        text-align: center;
+        color: #DE3D82;
+    }
+
+    label {
+        font-size: 20px;
+        color: #69C6CE;
+    }
+
+    input {
+        /*все поля в форме*/
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        min-height: 28px;
+        background-color: #D5F1F3;
+    }
+
+    input:focus {
+        background-color: #F3FEFF;
+        outline: 2px solid #DE3D82;
+        transition: outline-color 0.3s;
+    }
+
+    p {
+        font-size: 17px;
+        text-align: center;
+        line-height: 1.2; 
+        a {
+            color: #17929D;
+            text-decoration: none;
+        }
+    }
+
+    h1,
+    .name,
+    .mail,
+    .password,
+    .confirm_password,
+    .butt {
+        margin: 15px 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .sub {
+        /*кнопка */
+        display: inline-block;
+        text-align: center;
+
+        input {
+            font-family: 'southghetto';
+            font-size: 20px;
+            min-height: 28px;
+            width: 52%;
+            background-color: #17929D;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        input:hover {
+            background-color: #69C6CE;
+            transition: background-color 0.2s;
+        }
+    }
+
+}
+
+@media (max-width: 1024px) {
+
+    #form {
+        width: 330px;
+        padding: 13px;
+
+    }
+
+    #autorisation {
+
+        h1 {
+            font-size: 32px;
+        }
+
+        label {
+            font-size: 18px;
+        }
+
+        input {
+            /*все поля в форме*/
+            min-height: 26px;
+        }
+
+        p {
+            font-size: 15px;
+        }
+
+        h1,
+        .name,
+        .mail,
+        .password,
+        .confirm_password,
+        .butt {
+            margin: 14px 0;
+            gap: 5px;
+        }
+
+        .sub input {
+            font-size: 18px;
+            min-height: 26px;
+        }
+
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    #form {
+        width: 310px;
+        padding: 12px;
+
+    }
+
+    #autorisation {
+
+        h1 {
+            font-size: 29px;
+        }
+
+        label {
+            font-size: 16px;
+        }
+
+        input {
+            /*все поля в форме*/
+            min-height: 24px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        h1,
+        .name,
+        .mail,
+        .password,
+        .confirm_password,
+        .butt {
+            margin: 14px 0;
+            gap: 5px;
+        }
+
+        .sub input {
+            font-size: 16px;
+            min-height: 24px;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+
+    #form {
+        width: 266px;
+        padding: 7px;
+    }
+
+    #autorisation {
+
+        h1 {
+            font-size: 24px;
+        }
+
+        label {
+            font-size: 15px;
+        }
+
+        input {
+            /*все поля в форме*/
+            min-height: 22px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+
+        h1,
+        .name,
+        .mail,
+        .password,
+        .confirm_password,
+        .butt {
+            margin: 14px 0;
+            gap: 5px;
+        }
+
+        .sub input {
+            font-size: 14px;
+            min-height: 22px;
+        }
+    }
+}

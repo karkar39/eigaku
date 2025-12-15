@@ -1,0 +1,566 @@
+@font-face {
+  font-family: "southghetto";
+  src: url("../fonts/SOUTHGHETTO.ttf");
+  descent-override: 5%;
+}
+
+@font-face {
+  font-family: "microsoftsansserif";
+  src: url("../fonts/microsoftsansserif.ttf");
+}
+
+body {
+  background-color: #121416;
+  font-family: 'southghetto';
+  margin: 0;
+  color: #D5F1F3;
+}
+
+.all {
+  height: 100%;
+  margin-top: 150px;
+}
+
+nav {
+  height: 55px;
+  /*высота*/
+  display: flex;
+  position: fixed;
+  top: 0;
+  /*чтоб наверху высело*/
+  width: 100%;
+  /*по всей ширине*/
+  align-items: center;
+  justify-content: center;
+  /*по вертикали выравн*/
+  z-index: 1000;
+
+  #logo {
+    font-size: 35px;
+    /* text-align: center; */
+    position: absolute;
+    left: 13px;
+
+    a {
+      text-decoration: none;
+      color: #69C6CE;
+    }
+  }
+}
+
+#nav-medium {
+  display: flex;
+  column-gap: 40px;
+  /* margin: 0 auto; */
+  height: 100%;
+  align-items: center;
+}
+
+#not-burger {
+  /*без поиска*/
+  display: flex;
+  list-style: none;
+  padding: 0;
+  align-items: center;
+  column-gap: 40px;
+  font-size: 25px;
+  /* height: 100%; */
+
+  li {
+    flex-shrink: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: #D5F1F3;
+  }
+
+  a:hover {
+    color: #DE3D82;
+    transition: color 0.3s;
+  }
+}
+
+#catalog {
+  position: relative;
+  display: inline-block;
+}
+
+#catalog:hover #catalog-content,
+#burger-catalog:hover #burger-catalog-menu {
+  /*менб в колонну*/
+  display: flex;
+  flex-direction: column;
+  /* transition: display 22.3s; */
+}
+
+#catalog-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  /* z-index: 1; */
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+nav form {
+  /*поиск*/
+  display: flex;
+
+  /* place-items: center; */
+  /*input по центру*/
+  input {
+    background-color: #D5F1F3;
+    border-radius: 6px;
+    padding: 4px 0px 0px 4px;
+    border: none;
+    width: 120px;
+    height: 25px;
+  }
+
+  input:hover,
+  input:focus {
+    /*поиск наведение*/
+    background-color: #F3FEFF;
+  }
+
+  input:focus {
+    /*поиск зажатие*/
+    outline: 2px solid #DE3D82;
+    transition: outline-color 0.3s;
+  }
+
+  input::placeholder {
+    display: flex;
+    font-family: 'southghetto';
+    font-size: 18px;
+    color: #15383D;
+  }
+}
+
+.burger-checkbox {
+  /*чтоб чекбокс пряталась*/
+  position: absolute;
+  top: 0;
+  right: 0;
+  visibility: hidden;
+}
+
+.burger {
+  /*блок полосок*/
+  position: absolute;
+  /*чтоб был над менюшкой при открытии?*/
+  z-index: 100;
+  /*отвечает за перекрывание иерархию */
+  top: 15px;
+  right: 10px;
+  cursor: pointer;
+  /*меняет курсор*/
+  display: block;
+  /*как блок с новой строки*/
+  width: 30px;
+  height: 23px;
+}
+
+.burger::before,
+/*полоски*/
+.burger::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 3px;
+  border-radius: 10px;
+  background-color: #17929D;
+  /*первый третий полосы*/
+}
+
+.burger::before {
+  top: 0;
+  /*сдвигает на самый верх*/
+  box-shadow: 0 10px 0 #17929D;
+  /*вторая полоса*/
+  transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
+}
+
+.burger::after {
+  /*крестик*/
+  bottom: 0;
+  /*сдвигает на самый низ*/
+  transition: bottom .3s .15s, transform .3s;
+}
+
+.burger-checkbox:checked+.burger::before {
+  top: 10px;
+  transform: rotate(45deg);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
+  /*скрывает среднюю палку*/
+  transition: box-shadow .15s, top .3s, transform .3s .15s;
+}
+
+.burger-checkbox:checked+.burger::after {
+  bottom: 10px;
+  transform: rotate(-45deg);
+  transition: bottom .3s, transform .3s .15s;
+}
+
+.menu-list {
+  /*сама менюшка всплывающая*/
+  top: 0;
+  right: 0;
+  position: absolute;
+  display: block;
+  padding: 45px 0 10px 0;
+  margin: 0;
+  list-style-type: none;
+  transform: translateX(100%);
+  /*двигается налево*/
+  transition: 0.3s;
+  width: 150px;
+  height: auto;
+  border-bottom-left-radius: 10px;
+  border-left: 2px solid #17929D;
+  border-bottom: 2px solid #17929D;
+}
+
+.menu-item {
+  display: block;
+  color: #D5F1F3;
+  padding: 8px;
+  /* color: #D5F1F3; */
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+}
+
+#burger-catalog #burger-catalog-menu {
+  display: none;
+  text-align: center;
+  flex-direction: column;
+  position: absolute;
+  right: 140px;
+  width: 100px;
+  border-radius: 10px;
+  /* border: 1px solid #17929D; */
+
+  a {
+    text-decoration: none;
+    margin: 2px;
+    color: #D5F1F3;
+  }
+}
+
+.menu-item:hover,
+#burger-catalog #burger-catalog-menu a:hover {
+  color: #DE3D82;
+  transition: color 0.3s;
+}
+
+.burger-checkbox:checked~.menu-list {
+  transform: translateX(0);
+}
+
+nav,
+#burger-catalog #burger-catalog-menu,
+.menu-list,
+#catalog-content {
+  /*зеленый фон*/
+  background-color: #15383D;
+}
+
+footer {
+  align-items: center;
+  min-height: 40px;
+  width: 100%;
+  background-color: #15383D;
+  margin-top: 150px;
+  padding: 0px;
+  padding-top: 10px;
+}
+
+#footer-items {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 24px;
+  color: #D5F1F3;
+  text-align: center;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+    color: #17929D;
+  }
+
+  span {
+    text-align: center;
+  }
+
+  svg {
+    border-radius: 6px;
+    font-size: 25px
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .all {
+    margin-top: 150px;
+  }
+
+  nav {
+    height: 50px;
+
+    #logo {
+      font-size: 30px;
+      left: 13px;
+    }
+  }
+
+  #nav-medium {
+    column-gap: 30px;
+  }
+
+  #not-burger {
+    /*без поиска*/
+    column-gap: 33px;
+    font-size: 23px;
+  }
+
+  #catalog-content {
+    font-size: 17px;
+  }
+
+  nav form {
+
+    /*поиск*/
+    input {
+      padding: 4px 0px 0px 4px;
+      height: 23px;
+      width: 110px;
+    }
+
+    input::placeholder {
+      font-size: 17px;
+    }
+  }
+
+  .burger {
+    top: 14px;
+    right: 20px;
+    width: 28px;
+    height: 23px;
+  }
+
+  .menu-list {
+    /*сама менюшка всплывающая*/
+    padding: 45px 8px 8px 0;
+    width: 150px;
+  }
+
+  .menu-item {
+    padding: 7px;
+  }
+
+  #burger-catalog #burger-catalog-menu a,
+  .menu-item {
+    font-size: 17px;
+  }
+
+  footer {
+    height: 30px;
+    margin-top: 150px;
+    padding: 10px;
+  }
+
+  #footer-items {
+    font-size: 22px;
+
+    svg {
+      border-radius: 6px;
+      font-size: 25px
+    }
+  }
+
+}
+
+
+
+@media (max-width: 767px) {
+
+
+  .all {
+    margin-top: 140px;
+  }
+
+  nav {
+    height: 40px;
+
+    #logo {
+      font-size: 25px;
+      left: 10px;
+    }
+  }
+
+  #nav-medium {
+    column-gap: 20px;
+  }
+
+  #not-burger {
+    /*без поиска*/
+    column-gap: 20px;
+    font-size: 20px;
+  }
+
+  #catalog-content {
+    font-size: 16px;
+  }
+
+  nav form {
+
+    /*поиск*/
+    input {
+      padding: 4px 0px 0px 4px;
+      height: 20px;
+      width: 80px;
+    }
+
+    input::placeholder {
+      font-size: 16px;
+    }
+  }
+
+  .burger {
+    top: 8px;
+    right: 16px;
+    width: 25px;
+    height: 23px;
+  }
+
+  .menu-list {
+    /*сама менюшка всплывающая*/
+    padding: 34px 0px 6px 0;
+    width: 140px;
+  }
+
+  .menu-item {
+    padding: 6px;
+  }
+
+  #burger-catalog #burger-catalog-menu {
+    right: 130px;
+
+    a {
+      margin: 1px;
+    }
+
+    #burger-catalog #burger-catalog-menu a,
+    .menu-item {
+      font-size: 16px;
+    }
+  }
+
+  footer {
+    height: 23px;
+    margin-top: 150px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 425px) {
+
+  #not-burger {
+    /*без поиска*/
+    display: none;
+  }
+
+}
+
+@media (max-width: 320px) {
+
+  .all {
+    margin-top: 130px;
+  }
+
+  nav {
+    height: 40px;
+
+    #logo {
+      font-size: 20px;
+      left: 8px;
+
+    }
+  }
+
+  #nav-medium {
+    column-gap: 10px;
+
+  }
+
+  #not-burger {
+    /*без поиска*/
+    display: none;
+  }
+
+  #catalog-content {
+    font-size: 16px;
+  }
+
+  nav form {
+
+    /*поиск*/
+    input {
+      padding: 2px 0px 0px 4px;
+      height: 18px;
+      width: 99px;
+    }
+
+    input::placeholder {
+      font-size: 15px;
+    }
+  }
+
+  .burger {
+    top: 5px;
+    right: 3px;
+    width: 24px;
+    height: 23px;
+  }
+
+  .menu-list {
+    /*сама менюшка всплывающая*/
+    padding: 32px 5px 4px 0;
+    width: 115px;
+  }
+
+  .menu-item {
+    padding: 5px;
+  }
+
+  #burger-catalog #burger-catalog-menu {
+    right: 110px;
+    width: 80px;
+  }
+
+  #burger-catalog #burger-catalog-menu a,
+  .menu-item {
+    font-size: 15px;
+  }
+
+  footer {
+    height: 10px;
+  }
+
+  #footer-items {
+    span {
+      font-size: 17px;
+    }
+
+    svg {
+      font-size: 16px
+    }
+  }
+
+}

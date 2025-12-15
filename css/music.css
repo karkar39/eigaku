@@ -1,0 +1,57 @@
+.all {
+    padding: 40px;
+}
+
+#card-all {
+    display: flex;
+    gap: 15px;
+    margin: 10px auto;
+    width: 60%;
+}
+
+#text {
+    display: block;
+    font-family: sans-serif;
+    width: auto;
+    color: #D5F1F3;
+
+    h2 {
+        font-family: 'southghetto';
+        font-size: 40px;
+        letter-spacing: 1px;
+        margin: 0;
+        color: #69C6CE;
+    }
+}
+
+#pic {
+    /*блок фильма*/
+    flex: 0 0 auto;
+    min-height: 300px;
+    width: 300px;
+
+
+    img {
+        object-fit: cover;
+        width: 300px;
+        height: 300px;
+        /* display: block; */
+
+    }
+}
+
+#list {
+    h3 {
+        font-family: 'southghetto';
+        letter-spacing: 1px;
+        margin: 0;
+        color: #D5F1F3;
+    }
+
+    .tracklist {
+        font-family: sans-serif;
+        letter-spacing: 1px;
+        margin: 0;
+        color: #D5F1F3;
+    }
+}
