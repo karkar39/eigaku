@@ -1,18 +1,20 @@
-/* .all {
-    padding: 40px;
-} */
+#kino-music {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    column-gap: 40px;
+}
 
 #card-all {
     display: flex;
     gap: 15px;
     margin: 10px auto;
-    width: 60%;
+    width: 700px;
     padding: 0;
 }
 
 #pic {
     /*блок фильма*/
-    /* flex: 0 0 auto; */
     display: block;
     width: 300px;
     height: 400px;
@@ -22,7 +24,7 @@
         width: 100%;
         height: 100%;
         border-radius: 5px;
-        /* display: block; */
+        display: block;
         margin-bottom: 15px;
     }
 
@@ -41,10 +43,6 @@
     .watch:hover {
         background-color: #69C6CE;
     }
-
-    .save {
-        font-size: 15px;
-    }
 }
 
 #text {
@@ -54,7 +52,7 @@
     height: 400px;
     margin: 0;
 
-    h3 {
+    h2 {
         font-family: 'southghetto';
         font-size: 40px;
         letter-spacing: 1px;
@@ -65,24 +63,96 @@
 
     p {
         margin: 0;
+        font-size: 17px;
     }
 }
 
-#list {
-    h4 {
-        font-family: 'southghetto';
-        letter-spacing: 1px;
+#soundtracks {
+    /* border: 1px solid #17929D; */
+    box-shadow: 0 -10px 20px -5px #17929D,
+        /* верхняя тень */
+        0 10px 20px -5px #17929D;
+    border-radius: 5px;
+    padding: 5px;
+    width: 300px;
+
+    h2 {
+        /* text-align: center; */
         margin: 0;
-        /* color: #D5F1F3; */
+        font-size: 40px;
+        color: #DE3D82;
     }
 
-    #serialist {
-        font-family: sans-serif;
-        letter-spacing: 1px;
+    #tracklist {
         margin: 0;
-        /* color: #D5F1F3; */
+        list-style: none;
+        padding: 0;
+
+        ol {
+            padding: 5px 0px 5px 26px;
+        }
+
+        li {
+            padding: 3px;
+            margin: 0;
+            color: #D5F1F3;
+            border-radius: 5px;
+            font-family: sans-serif;
+            font-size: 17px;
+
+        }
+
+        li:hover {
+            cursor: pointer;
+        }
+    }
+
+    audio {
+        width: 100%;
+        height: 30px;
+        filter: invert(1);
+    }
+
+    #buttons {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        height: 40px;
+        gap: 5px;
+
+        button {
+            background-color: #17929D;
+            border: none;
+            font-family: 'southghetto';
+            font-size: 15px;
+            color: #F3FEFF;
+            width: 100px;
+            height: 25px;
+            border-radius: 5px;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            background-color: #69C6CE;
+
+        }
     }
 }
+
+#video-player {
+    display: none;
+    margin-top: 40px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    height: 30px;
+    margin-top: auto;
+    padding: 10px;
+}
+
 
 @media (max-width: 1024px) {
 
@@ -112,5 +182,121 @@
             color: #69C6CE;
             margin-bottom: 5px;
         }
+    }
+}
+
+@media (max-width: 320px) {
+    #kino-music {
+        display: block;
+        /* justify-content: center; */
+        column-gap: 70px;
+        padding: 10px;
+    }
+
+    #card-all {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 10px;
+        margin: 10px auto;
+        width: 100%;
+        /* padding: 0; */
+    }
+
+    #pic {
+        /*блок фильма*/
+        display: block;
+        width: 140px;
+        height: 250px;
+
+        img {
+            margin-bottom: 10px;
+        }
+
+        .watch {
+            font-size: 12px;
+            width: 80px;
+            height: 25px;
+            border-radius: 5px;
+            letter-spacing: 1px;
+        }
+    }
+
+    #text {
+        display: block;
+        width: auto;
+        height: 300px;
+        width: 150px;
+        margin: 0;
+        overflow: scroll;
+
+        h2 {
+            font-size: 18px;
+            margin-bottom: 3px;
+        }
+
+        p {
+            margin: 0;
+            font-size: 14px;
+        }
+    }
+
+    #soundtracks {
+        /* border-radius: 5px; */
+        /* padding: 5px; */
+        width: 250px;
+        margin-top: 40px;
+
+        h2 {
+            /* text-align: center; */
+            /* margin: 0; */
+            font-size: 18px;
+        }
+
+        #tracklist {
+
+            ol {
+                padding: 5px 0px 5px 26px;
+            }
+
+            li {
+                padding: 3px;
+                margin: 0;
+                color: #D5F1F3;
+                font-size: 13px;
+            }
+        }
+
+        audio {
+            height: 25px;
+            filter: invert(1);
+        }
+
+        #buttons {
+            /* display: flex; */
+            /* justify-content: center; */
+            /* text-align: center; */
+            /* align-items: center; */
+            height: 30px;
+            gap: 5px;
+
+            button {
+                font-size: 13px;
+                width: 80px;
+                height: 25px;
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    #video-player {
+        display: none;
+        margin-top: 40px;
+    }
+
+    footer {
+        height: 30px;
+        width: 100%;
+        margin-top: 150px;
+        padding: 10px;
     }
 }

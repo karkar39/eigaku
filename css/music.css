@@ -2,11 +2,18 @@
     padding: 40px;
 }
 
+#alll {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    column-gap: 40px;
+}
+
 #card-all {
     display: flex;
     gap: 15px;
     margin: 10px auto;
-    width: 60%;
+    width: 800px;
 }
 
 #text {
@@ -45,13 +52,38 @@
         font-family: 'southghetto';
         letter-spacing: 1px;
         margin: 0;
-        color: #D5F1F3;
+        color: #DE3D82;
     }
 
-    .tracklist {
-        font-family: sans-serif;
-        letter-spacing: 1px;
+    #tracklist {
         margin: 0;
-        color: #D5F1F3;
-    }
-}
+        list-style: none;
+        padding: 0;
+
+        ol {
+            padding: 5px 0px 5px 26px;
+        }
+
+        li {
+            padding: 3px;
+            margin: 0;
+            color: #D5F1F3;
+            border-radius: 5px;
+            font-family: sans-serif;
+
+        }
+
+        li:hover {
+            cursor: pointer;
+        }
+}}
+
+
+
+ footer {
+    height: 30px;
+    margin-top: 150px;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+  }

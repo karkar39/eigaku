@@ -89,8 +89,6 @@
     cursor: not-allowed;
 }
 
-
-
 @media (max-width: 1024px) {
 
     .carousel-container {
@@ -115,12 +113,19 @@
         border-radius: 15px;
     }
 
+    .carousel-item:hover {
+        box-shadow: 0 -10px 20px -5px #17929D,
+            /* верхняя тень */
+            0 10px 20px -5px #17929D;
+        /* нижняя тень */
+    }
+
 }
 
 @media (max-width: 767px) {
 
     .carousel-container {
-        margin-top: 90px;
+        margin-top: 100px;
 
         h2 {
             margin: 0 0 7px 5px;
@@ -141,29 +146,11 @@
         border-radius: 13px;
     }
 
-}
-
-@media (max-width: 320px) {
-
-    .carousel-container {
-        margin-top: 80px;
-
-        h2 {
-            margin: 0 0 7px 5px;
-            font-size: 19px;
-        }
-    }
-
-    .carousel-track {
-        /*двигающаяся часть*/
-        gap: 6px;
-        padding: 0 0 30px 6px;
-    }
-
-    .carousel-item {
-        /*блок фильма*/
-        max-height: 250px;
-        width: 150px;
+    .carousel-item:hover {
+        box-shadow: 0 -10px 20px -5px #17929D,
+            /* верхняя тень */
+            0 10px 20px -5px #17929D;
+        /* нижняя тень */
     }
 
 }
