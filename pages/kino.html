@@ -13,9 +13,7 @@
 
     <header>
         <nav>
-
-            <div id="logo"><a href="../index.html" target="_self">Eigaku</a></div><!--логотип-->
-
+            <div id="logo"><a href="../index.html" target="_self">EIGAKU</a></div><!--логотип-->
             <div id="nav-medium">
                 <ul id="not-burger"><!--три челикса-->
                     <li><a href="../index.html" target="_self">Главная</a></li>
@@ -26,101 +24,173 @@
                             <a href="#">музыка</a>
                         </div>
                     </li>
-                    <li><a href="about-us.html" target="_self">о нас</a></li>
+                    <li><a href="../pages/about-us.html" target="_self">о нас</a></li>
                 </ul>
-
-                <form action="/search" method="get"> <!--поиск-->
+                <form action="/search" method="get" id="search"> <!--поиск-->
                     <input type="search" name="search" placeholder="Поиск">
                     <!-- <button type="submit">Найти</button> -->
                 </form>
-
-
             </div>
-
-
             <div class="menu"> <!--бургер менюха-->
                 <input type="checkbox" id="burger-checkbox" class="burger-checkbox"> <!--создаем чекбокс-->
                 <label for="burger-checkbox" class="burger"></label>
                 <ul class="menu-list">
-                    <li><a href="#" class="menu-item">Моя медиатека</a>
+                    <li><a href="../pages/registration.html" class="menu-item">коллекции</a>
                     <li>
+                    <li id="burger-catalog">
+                        <div id="burger-catalog-menu">
+                            <a href="#">кино</a>
+                            <a href="#">музыка</a>
+                        </div>
+                        <a href="#" class="menu-item">каталог</a>
+                    </li>
+                    <li><a href="../pages/about-us.html" target="_self" class="menu-item">о нас</a></li>
                     <li><a href="#" class="menu-item">Подписка</a>
                     <li>
                     <li><a href="#" class="menu-item">Настройки</a>
                     <li>
                 </ul>
             </div>
-
-
         </nav>
     </header>
 
     <div class="all">
-        <div id="card-all">
+        <div id="kino-music">
+            <div id="card-all">
 
-            <div id="pic">
-                <img src="../img/silencelambs.jpg" alt="картинка кино" class="kino-image">
-                <button type="button" class="watch">смотреть</button>
-                <button type="button" class="love">в избранное</button>
+                <div id="pic">
+                    <img src="../img/silencelambs.jpg" alt="картинка кино" class="kino-image">
+                    <button type="button" class="watch" onclick="openFullscreen()">смотреть</button>
+                    <!-- <button type="button" class="love">в избранное</button> -->
+                    <!-- <iconify-icon class="heart-icon" icon="mdi:heart"></iconify-icon> -->
+                </div>
+
+                <div id="text">
+                    <h2>Молчание ягнят (1990)</h2>
+                    <p>Психопат похищает и убивает молодых женщин по всему Среднему Западу. ФБР, уверенное, что все
+                        преступления совершены одним и тем же человеком, поручает агенту Клариссе Старлинг встретиться с
+                        заключенным-маньяком Ганнибалом Лектером, который мог бы помочь составить психологический
+                        портрет
+                        убийцы. Сам Лектер отбывает наказание за убийства и каннибализм. Он согласен помочь Клариссе
+                        лишь в
+                        том случае, если она попотчует его больное воображение подробностями своей личной жизни.</p>
+                </div>
             </div>
 
-            <div id="text">
-                <h3>Молчание ягнят (1990)</h3>
-                <p>Психопат похищает и убивает молодых женщин по всему Среднему Западу. ФБР, уверенное, что все
-                    преступления совершены одним и тем же человеком, поручает агенту Клариссе Старлинг встретиться с
-                    заключенным-маньяком Ганнибалом Лектером, который мог бы помочь составить психологический портрет
-                    убийцы. Сам Лектер отбывает наказание за убийства и каннибализм. Он согласен помочь Клариссе лишь в
-                    том случае, если она попотчует его больное воображение подробностями своей личной жизни.</p>
+            <div id="soundtracks">
+                <h2>саундтреки</h2>
+                <ul id="tracklist">
+                    <ol>
+                        <li onclick="playThis(0)">Main Title</li>
+                        <li onclick="playThis(1)">The Asylum</li>
+                        <li onclick="playThis(2)">Clarice</li>
+                        <li onclick="playThis(3)">Return to the Asylum</li>
+                        <li onclick="playThis(4)">The Abduction</li>
+                        <li onclick="playThis(5)">Quid Pro Quo</li>
+                        <li onclick="playThis(6)">Lecter In Memphis</li>
+                        <li onclick="playThis(7)">Lambs Screaming</li>
+                        <li onclick="playThis(8)">Lecter Escapes</li>
+                        <li onclick="playThis(9)">Belvedere, Ohio</li>
+                        <li onclick="playThis(10)">The Moth</li>
+                        <li onclick="playThis(11)">The Cellar</li>
+                        <li onclick="playThis(12)">Finale</li>
+                    </ol>
+                </ul>
+                <audio id="audioPlayer" controls></audio>
+
+                <div id="buttons">
+                    <button onclick="prevSong()">Назад</button>
+                    <button onclick="nextSong()">Вперед</button>
+                </div>
             </div>
-        </div>
-
-        <div id="soundtracks">
-            <h2>саундтреки</h2>
-            <ul class="tracklist">
-                <ol>
-                    <li>Main Title</li>
-                    <li>The Asylum</li>
-                    <li>Clarice</li>
-                    <li>Return to the Asylum</li>
-                    <li>The Abduction</li>
-                    <li>Quid Pro Quo</li>
-                    <li>Lecter In Memphis</li>
-                    <li>Lambs Screaming</li>
-                    <li>Lecter Escapes</li>
-                    <li>Belvedere, Ohio</li>
-                    <li>The Moth</li>
-                    <li>The Cellar</li>
-                    <li>Finale</li>
-                </ol>
-            </ul>
-            <button type="button" class="listen">слушать</button>
 
         </div>
-
-        <div id="audio-player">
-            <audio controls>
-                <source src="music.mp3" type="audio/mpeg">
-                <source src="music.ogg" type="audio/ogg">
-            </audio>
-        </div>
-
 
         <div id="video-player">
-            <video src="/img/lambs.mp4" poster="/img/lambs.jfif" controls width="400px" height="250px"></video>
+            <video src="../media/lambs.mp4" poster="/img/lambs.jfif" controls width="400px" height="250px"></video>
         </div>
-        <footer>
-            <div id="footer-items">
-                <span>&copy; 2025 <a href="index.html" target="_self">EIGAKU</a> </span>
-                <div id="icons">
-                    <span class="iconify" data-icon="bxl:telegram"></span>
-                    <span class="iconify" data-icon="bxl:whatsapp"></span>
-                    <span class="iconify" data-icon="bxl:gmail"></span>
-                </div>
-                <span><a href="pages/about-us.html" target="_self">о нас</a></span>
-            </div>
-        </footer>
-        <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+
+
     </div>
+
+    <footer>
+        <div id="footer-items">
+            <span>&copy; 2025 <a href="../index.html" target="_self">EIGAKU</a> </span>
+            <div id="icons">
+                <span class="iconify" data-icon="bxl:telegram"></span>
+                <span class="iconify" data-icon="bxl:whatsapp"></span>
+                <span class="iconify" data-icon="bxl:gmail"></span>
+            </div>
+            <span><a href="../pages/about-us.html" target="_self">о нас</a></span>
+        </div>
+    </footer>
+
+    <script>
+        function openFullscreen() {
+            // Получаем видео
+            const video = document.querySelector('#video-player video');
+            // Показываем видео
+            document.getElementById('video-player').style.display = 'block';
+            // полноэкранный режим
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            }
+            video.play();// Автоматически воспроизводим
+        }
+    </script>
+
+    <script>
+        // Плейлист
+        const playlist = [
+            "../media/song1.mp3",
+            "../media/song2.mp3",
+            "../media/song3.mp3",
+            "../media/song1.mp3",
+            "../media/song2.mp3",
+            "../media/song3.mp3",
+            "../media/song1.mp3",
+            "../media/song2.mp3",
+            "../media/song3.mp3",
+            "../media/song1.mp3",
+            "../media/song2.mp3",
+            "../media/song3.mp3",
+            "../media/song3.mp3",
+        ];
+        let currentSong = 0;
+        // Воспроизвести выбранную песню
+        function playThis(index) {
+            currentSong = index;
+            const player = document.getElementById('audioPlayer');
+            player.src = playlist[index];
+            player.play();
+            highlightSong(index);
+        }
+        // Следующая песня
+        function nextSong() {
+            currentSong = (currentSong + 1) % playlist.length;
+            playThis(currentSong);
+        }
+        // Предыдущая песня
+        function prevSong() {
+            currentSong = (currentSong - 1 + playlist.length) % playlist.length;
+            playThis(currentSong);
+        }
+        // Подсветить текущую песню
+        function highlightSong(index) {
+            const items = document.querySelectorAll('#tracklist li');
+            items.forEach((item, i) => {
+                item.style.background = i === index ? '#69C6CE' : '';
+                item.style.fontWeight = i === index ? 'bold' : 'normal';
+            });
+        }
+        // Автоматическое переключение
+        document.getElementById('audioPlayer').onended = nextSong;
+    </script>
+</body>
+
+</html>
+</div>
+<script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
 
 </body>
 
